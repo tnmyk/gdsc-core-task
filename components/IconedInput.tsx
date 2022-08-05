@@ -20,7 +20,9 @@ const IconedInput = ({
   };
 
   return (
-    <div className={`flex relative border rounded-lg px-2 py-1 ${className}`}>
+    <div
+      className={`flex relative border rounded-lg px-2 py-1 bg-gray-50 ${className}`}
+    >
       <button
         onClick={handleDropDown}
         className="inline-flex items-center justify-center py-2.5 px-3 min-w-[6rem] text-sm font-medium text-center text-gray-900 border border-gray-600 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100"
@@ -44,7 +46,7 @@ const IconedInput = ({
       <div className="relative w-full rounded">
         <input
           type="search"
-          className="block p-2.5 px-4 pr-8 w-full z-20 text-sm text-gray-900 bg-gray-50 outline-none"
+          className="block p-2.5 px-4 pr-8 w-full z-20 text-sm text-gray-900 outline-none"
           placeholder={`Search ${currentFilter}...`}
         />
         <div className="absolute inline-flex items-center top-0 bottom-0 right-0 p-2.5 text-lg">

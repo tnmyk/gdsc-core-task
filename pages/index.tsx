@@ -2,6 +2,26 @@ import type { NextPage } from "next";
 import { CgOptions } from "react-icons/cg";
 import IconedInput from "../components/IconedInput";
 import { BiBookmarks } from "react-icons/bi";
+import Card from "../components/Card";
+
+const temp = [
+  {
+    title: "Dog illustration",
+    isPremium: true,
+    imageURL: "https://picsum.photos/150/100",
+  },
+  {
+    title: "Dog illustration",
+    isPremium: true,
+    imageURL: "https://picsum.photos/150/100",
+  },
+  {
+    title: "Dog illustration",
+    isPremium: false,
+    imageURL: "https://picsum.photos/150/100",
+  },
+];
+
 const Home: NextPage = () => {
   const searchDropdownItems = ["Vectors", "Photos", "PSD", "Videos"];
   return (
@@ -30,6 +50,15 @@ const Home: NextPage = () => {
           <CgOptions />
           <BiBookmarks />
         </div>
+      </div>
+      <div className="mt-8 flex w-9/12 justify-between">
+        {temp.map((card, index) => (
+          <Card
+            title={card.title}
+            isPremium={card.isPremium}
+            imageURL={card.imageURL}
+          />
+        ))}
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ const IconedInput = ({
 
   return (
     <div
-      className={`flex relative border rounded-lg px-2 py-1 bg-gray-50 ${className}`}
+      className={`flex relative  rounded-lg px-2 py-1 bg-white ${className}`}
     >
       <button
         onClick={handleDropDown}

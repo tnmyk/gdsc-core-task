@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import Dropdown from "./Dropdown";
+
 const IconedInput = ({
   dropdownItems,
   className,
@@ -26,7 +27,7 @@ const IconedInput = ({
         className="inline-flex items-center justify-center py-2.5 px-3 min-w-[6rem] text-sm font-medium text-center text-gray-900 border border-gray-600 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100"
         type="button"
       >
-        {currentFilter}{" "}
+        {currentFilter}
         <svg
           aria-hidden="true"
           className="ml-1 w-4 h-4"

@@ -7,10 +7,10 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center mt-3">
       <h1 className="text-4xl">Popular Pro Stock Vectors</h1>
-      <h2 className="mt-4 text-center">
+      <h2 className="mt-4 text-center text-gray-500">
         High quality Vector with worry-free licensing for
         <br />
-        personal and commerical use
+        personal and commerical use.
       </h2>
       <div className="py-8">
         <IconedInput

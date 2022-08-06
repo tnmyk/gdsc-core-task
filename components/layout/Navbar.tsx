@@ -62,7 +62,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex items-center gap-x-4">
-        <button className="px-4 py-2 rounded border">+ Submit</button>
+        <button className="px-4 py-2 mr-4 text-sm text-gray-500 font-medium rounded-lg border border-gray-800">
+          + Submit
+        </button>
         <SocialIcon icon="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" />
         <SocialIcon icon="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" />
       </div>

@@ -36,7 +36,7 @@ const Dropdown = ({
     <div
       className={`${
         dropdownOpen ? "block" : "hidden"
-      } absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow bottom-[-10rem]`}
+      } absolute z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow top-[105%]`}
     >
       <ul className="py-1 text-sm text-gray-700">
         {dropdownItems.map((item) => {

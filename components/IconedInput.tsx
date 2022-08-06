@@ -16,7 +16,6 @@ const IconedInput = ({
   };
   const handleDropDownSelect = (item: string) => {
     setCurrentFilter(item);
-    setDropdownOpen(false);
   };
 
   return (

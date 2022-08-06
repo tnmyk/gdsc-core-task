@@ -10,7 +10,7 @@ interface Props {
 
 const Card = ({ title, isPremium, imageURL }: Props) => {
   return (
-    <div className="w-[32%] bg-white rounded-2xl p-3 pb-6 flex flex-col items-center">
+    <div className="w-[32%] bg-white rounded-2xl p-3 pb-6 flex flex-col items-center shadow-lg">
       <div className="relative w-full h-[12rem] rounded bg-gray-100 flex items-center justify-center ">
         <img src={imageURL} />
         <div className="absolute right-3 top-2 text-sm text-gray-500 font-medium flex items-center gap-x-1">

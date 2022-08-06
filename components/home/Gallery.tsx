@@ -25,6 +25,20 @@ const tempGalleryArr = [
   },
 ];
 
+const collectionsImages = [
+  "https://picsum.photos/100/100",
+  "https://picsum.photos/100/100",
+  "https://picsum.photos/100/100",
+];
+
+const CollectionsImage = ({ imageURL }: { imageURL: string }) => {
+  return (
+    <div className="w-10 h-10 rounded-lg overflow-hidden transition-all border-2 border-white ml-[-1rem]">
+      <img src={imageURL} width="105%" />
+    </div>
+  );
+};
+
 const Gallery = () => {
   const [currentPage, setCurrentPage] = useState(1);
   return (
@@ -52,12 +66,26 @@ const Gallery = () => {
           />
         ))}
       </div>
-      <button className="mt-4 p-3 px-5 bg-white rounded-lg shadow-md flex gap-x-4 justify-center items-center">
+      <button className="mt-8 p-3 px-7 bg-white rounded-lg shadow-md flex gap-x-4 justify-center items-center font-medium">
         Next Page <BsArrowRight />
       </button>
-      <div className="w-9/12 flex justify-between">
+      <div className="w-9/12 flex justify-between items-center">
         <Link href="">
-          <a>Discover All Collections</a>
+          <a className="flex gap-x-4 text-md underline font-medium">
+            <span>
+              Discover All
+              <br />
+              Collections
+            </span>
+            <div className="flex ml-4 [&:hover>*]:ml-1">
+              {collectionsImages.map((imageURL, index) => (
+                <CollectionsImage
+                  key={`collection-img-${index}`}
+                  imageURL={imageURL}
+                />
+              ))}
+            </div>
+          </a>
         </Link>
         <div className="flex gap-x-3 items-center text-sm font-medium text-gray-500">
           Page{" "}

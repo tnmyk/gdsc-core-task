@@ -16,12 +16,11 @@ const IconedInput = ({
   };
   const handleDropDownSelect = (item: string) => {
     setCurrentFilter(item);
+    setDropdownOpen(false);
   };
 
   return (
-    <div
-      className={`flex relative  rounded-lg px-2 py-1 bg-white ${className}`}
-    >
+    <div className={`flex relative rounded-lg px-2 py-1 bg-white ${className}`}>
       <button
         onClick={handleDropDown}
         className="inline-flex items-center justify-center py-2.5 px-3 min-w-[6rem] text-sm font-medium text-center text-gray-900 border border-gray-600 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100"

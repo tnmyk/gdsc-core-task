@@ -43,7 +43,7 @@ const Gallery = () => {
   const [currentPage, setCurrentPage] = useState(1);
   return (
     <>
-      <div className="w-9/12 flex justify-between">
+      <div className="w-9/12 flex flex-col sm:flex-row items-center sm:justify-between gap-y-3">
         <div className="flex gap-x-6 font-medium">
           <button>Latest</button>
           <button>Popular</button>
@@ -56,7 +56,7 @@ const Gallery = () => {
           <BiBookmarks />
         </div>
       </div>
-      <div className="mt-6 flex w-9/12 justify-between">
+      <div className="mt-6 flex flex-wrap flex-row w-9/12 gap-x-4 gap-y-5 justify-center">
         {tempGalleryArr.map((card, index) => (
           <Card
             key={`card-${index}`}
@@ -69,7 +69,7 @@ const Gallery = () => {
       <button className="mt-8 p-3 px-7 bg-white rounded-lg shadow-md flex gap-x-4 justify-center items-center font-medium">
         Next Page <BsArrowRight />
       </button>
-      <div className="w-9/12 flex justify-between items-center">
+      <div className="w-9/12 mt-6 md:mt-0 flex flex-col-reverse sm:flex-row gap-y-6 justify-between items-center">
         <Link href="">
           <a className="flex gap-x-4 text-md underline font-medium">
             <span>

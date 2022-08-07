@@ -6,18 +6,16 @@ const Home: NextPage = () => {
   const searchDropdownItems = ["Vectors", "Photos", "PSD", "Videos"];
   return (
     <div className="flex flex-col items-center mt-3">
-      <h1 className="text-4xl">Popular Pro Stock Vectors</h1>
+      <h1 className="text-4xl text-center">Popular Pro Stock Vectors</h1>
       <h2 className="mt-4 text-center text-gray-500">
         High quality Vector with worry-free licensing for
         <br />
         personal and commerical use.
       </h2>
-      <div className="py-8">
-        <IconedInput
-          dropdownItems={searchDropdownItems}
-          className="w-[30rem]"
-        />
-      </div>
+      <IconedInput
+        dropdownItems={searchDropdownItems}
+        className="my-8 sm:w-[80%] md:w-[30rem]"
+      />
       <Gallery />
     </div>
   );

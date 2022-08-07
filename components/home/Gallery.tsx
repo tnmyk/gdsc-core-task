@@ -26,14 +26,14 @@ const tempGalleryArr = [
 ];
 
 const collectionsImages = [
-  "https://picsum.photos/100/100",
-  "https://picsum.photos/100/100",
-  "https://picsum.photos/100/100",
+  `https://picsum.photos/seed/${Math.random()}/100`,
+  `https://picsum.photos/seed/${Math.random()}/100`,
+  `https://picsum.photos/seed/${Math.random()}/100`,
 ];
 
 const CollectionsImage = ({ imageURL }: { imageURL: string }) => {
   return (
-    <div className="w-10 h-10 rounded-lg overflow-hidden transition-all border-2 border-white ml-[-1rem]">
+    <div className="w-10 h-10 rounded-lg shadow-lg overflow-hidden transition-all border-2 border-white ml-[-1rem]">
       <img src={imageURL} width="105%" />
     </div>
   );

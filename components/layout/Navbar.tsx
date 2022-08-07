@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
-import Dropdown from "../Dropdown";
+import Dropdown from "../common/Dropdown";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 const SocialIcon = ({ icon }: { icon: string }) => {

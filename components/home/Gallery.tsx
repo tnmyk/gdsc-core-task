@@ -4,7 +4,7 @@ import { BiBookmarks } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
 import { CgOptions } from "react-icons/cg";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import Card from "../../components/Card";
+import GalleryCard from "./GalleryCard";
 import PaginationButton from "./PaginationButton";
 
 const tempGalleryArr = [
@@ -58,7 +58,7 @@ const Gallery = () => {
       </div>
       <div className="mt-6 flex flex-wrap flex-row w-9/12 gap-x-4 gap-y-5 justify-center">
         {tempGalleryArr.map((card, index) => (
-          <Card
+          <GalleryCard
             key={`card-${index}`}
             title={card.title}
             isPremium={card.isPremium}

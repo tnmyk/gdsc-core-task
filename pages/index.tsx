@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Gallery from "../components/home/Gallery";
-import IconedInput from "../components/IconedInput";
+import SearchWithDropdown from "../components/common/SearchWithDropdown";
 
 const Home: NextPage = () => {
   const searchDropdownItems = ["Vectors", "Photos", "PSD", "Videos"];
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <br />
         personal and commerical use.
       </h2>
-      <IconedInput
+      <SearchWithDropdown
         dropdownItems={searchDropdownItems}
         className="my-8 sm:w-[80%] md:w-[30rem]"
       />

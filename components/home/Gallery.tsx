@@ -9,9 +9,10 @@ import PaginationButton from "./PaginationButton";
 
 const galleryData = [
   {
-    title: "Locker illustration",
+    title: "Wave illustration",
     isPremium: true,
-    imageURL: "https://svgur.com/i/jsH.svg",
+    imageURL:
+      "https://www.freeiconspng.com/uploads/abstract-circle-wave-logo-png-image-11.png",
   },
   {
     title: "Batman illustration",

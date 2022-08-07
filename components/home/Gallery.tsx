@@ -7,25 +7,27 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import GalleryCard from "./GalleryCard";
 import PaginationButton from "./PaginationButton";
 
-const tempGalleryArr = [
+const galleryData = [
   {
-    title: "Dog illustration",
+    title: "Locker illustration",
     isPremium: true,
-    imageURL: "https://picsum.photos/150/100",
+    imageURL: "https://svgur.com/i/jsH.svg",
   },
   {
-    title: "Dog illustration",
+    title: "Batman illustration",
     isPremium: true,
-    imageURL: "https://picsum.photos/150/100",
+    imageURL:
+      "https://w7.pngwing.com/pngs/509/584/png-transparent-batman-logo-sticker-batman-logo-comics-emblem-superhero.png",
   },
   {
-    title: "Dog illustration",
+    title: "Med illustration",
     isPremium: false,
-    imageURL: "https://picsum.photos/150/100",
+    imageURL:
+      "https://www.freeiconspng.com/uploads/vaccine-medical-icon-symbol-png-15.png",
   },
 ];
 
-const collectionsImages = [
+const collectionsImagesData = [
   `https://picsum.photos/seed/${Math.random()}/100`,
   `https://picsum.photos/seed/${Math.random()}/100`,
   `https://picsum.photos/seed/${Math.random()}/100`,
@@ -57,7 +59,7 @@ const Gallery = () => {
         </div>
       </div>
       <div className="mt-6 flex flex-wrap flex-row w-9/12 gap-x-4 gap-y-5 justify-center">
-        {tempGalleryArr.map((card, index) => (
+        {galleryData.map((card, index) => (
           <GalleryCard
             key={`card-${index}`}
             title={card.title}
@@ -78,7 +80,7 @@ const Gallery = () => {
               Collections
             </span>
             <div className="flex ml-4 [&:hover>*]:ml-1">
-              {collectionsImages.map((imageURL, index) => (
+              {collectionsImagesData.map((imageURL, index) => (
                 <CollectionsImage
                   key={`collection-img-${index}`}
                   imageURL={imageURL}

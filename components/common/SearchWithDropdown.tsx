@@ -10,6 +10,7 @@ const SearchWithDropdown = ({
 }: ISearchWithDropdown) => {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [currentFilter, setCurrentFilter] = useState<string>(dropdownItems[0]);
+  
   const handleDropDown = () => {
     setDropdownOpen(!dropdownOpen);
   };

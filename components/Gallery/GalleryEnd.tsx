@@ -1,12 +1,6 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { BiBookmarks } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
-import { CgOptions } from "react-icons/cg";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import GalleryCard from "./GalleryCard";
-import { collectionsImagesData, galleryData } from "../../data/galleryData";
-import PaginationButton from "./PaginationButton";
+import { collectionsImagesData } from "../../data/galleryData";
 import { IGalleryEnd } from "../../types/gallery";
 import GalleryPagination from "./GalleryPagination";
 
@@ -15,6 +9,28 @@ const CollectionsImage = ({ imageURL }: { imageURL: string }) => {
     <div className="w-10 h-10 rounded-lg shadow-lg overflow-hidden transition-all border-2 border-white ml-[-1rem]">
       <img src={imageURL} width="105%" />
     </div>
+  );
+};
+
+const DiscoverCollections = () => {
+  return (
+    <Link href="">
+      <a className="flex gap-x-4 text-md underline font-medium">
+        <span>
+          Discover All
+          <br />
+          Collections
+        </span>
+        <div className="flex ml-4 [&:hover>*]:ml-1">
+          {collectionsImagesData.map((imageURL, index) => (
+            <CollectionsImage
+              key={`collection-img-${index}`}
+              imageURL={imageURL}
+            />
+          ))}
+        </div>
+      </a>
+    </Link>
   );
 };
 
@@ -37,23 +53,7 @@ const GalleryEnd = ({
         Next Page <BsArrowRight />
       </button>
       <div className="w-9/12 mt-6 md:mt-0 flex flex-col-reverse sm:flex-row gap-y-6 justify-between items-center">
-        <Link href="">
-          <a className="flex gap-x-4 text-md underline font-medium">
-            <span>
-              Discover All
-              <br />
-              Collections
-            </span>
-            <div className="flex ml-4 [&:hover>*]:ml-1">
-              {collectionsImagesData.map((imageURL, index) => (
-                <CollectionsImage
-                  key={`collection-img-${index}`}
-                  imageURL={imageURL}
-                />
-              ))}
-            </div>
-          </a>
-        </Link>
+        <DiscoverCollections />
         <GalleryPagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}

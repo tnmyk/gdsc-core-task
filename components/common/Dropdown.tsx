@@ -1,12 +1,12 @@
 import { IDropdownLiEle, IDropdownProps } from "../../types/common";
 
 const DropdownLiEle = ({ item, onSelect }: IDropdownLiEle) => {
+  const clickHandler = () => {
+    typeof onSelect === "function" && onSelect(item);
+  };
+  
   return (
-    <li
-      onClick={() => {
-        typeof onSelect === "function" && onSelect(item);
-      }}
-    >
+    <li onClick={clickHandler}>
       <button
         type="button"
         className="inline-flex py-2 px-4 w-full hover:bg-gray-100"

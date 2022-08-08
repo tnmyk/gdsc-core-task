@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Gallery from "../components/home/Gallery";
+import Gallery from "../components/Gallery/Gallery";
 import SearchWithDropdown from "../components/common/SearchWithDropdown";
 import { useState } from "react";
 

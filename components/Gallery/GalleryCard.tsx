@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HiOutlineDownload } from "react-icons/hi";
 import { TbLockOff, TbLockOpenOff } from "react-icons/tb";
-import { IGalleryCard } from "../../types/home";
+import { IGalleryCard } from "../../types/gallery";
 
 const GalleryCard = ({ title, isPremium, imageURL }: IGalleryCard) => {
   return (

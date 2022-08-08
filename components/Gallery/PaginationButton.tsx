@@ -1,4 +1,4 @@
-import { IPaginationButton } from "../../types/home";
+import { IPaginationButton } from "../../types/gallery";
 
 const PaginationButton = ({
   children,

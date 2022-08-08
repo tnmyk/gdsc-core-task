@@ -1,12 +1,6 @@
-import { IDropdownProps } from "../../types/common";
+import { IDropdownLiEle, IDropdownProps } from "../../types/common";
 
-const DropdownLiEle = ({
-  item,
-  onSelect,
-}: {
-  item: string;
-  onSelect: ((item: string) => void) | undefined;
-}) => {
+const DropdownLiEle = ({ item, onSelect }: IDropdownLiEle) => {
   return (
     <li
       onClick={() => {

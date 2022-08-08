@@ -11,3 +11,9 @@ export interface IGalleryCard {
   isPremium: boolean;
   imageURL: string;
 }
+
+export interface IGalleryEnd {
+  currentPage: number;
+  setCurrentPage: (currentPage: number) => void;
+  totalPages: number;
+}

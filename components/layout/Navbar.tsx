@@ -18,6 +18,8 @@ const SocialIcon = memo(({ icon }: { icon: string }) => {
   );
 });
 
+SocialIcon.displayName = "SocialIcon";
+
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);

@@ -1,18 +1,13 @@
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import { ISearchWithDropdown } from "../../types/common";
 import Dropdown from "./Dropdown";
 
-const IconedInput = ({
+const SearchWithDropdown = ({
   dropdownItems,
   className,
-  value,
   setValue,
-}: {
-  dropdownItems: string[];
-  className?: string;
-  value: string;
-  setValue: (value: string) => void;
-}) => {
+}: ISearchWithDropdown) => {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [currentFilter, setCurrentFilter] = useState<string>(dropdownItems[0]);
   const handleDropDown = () => {
@@ -60,4 +55,4 @@ const IconedInput = ({
   );
 };
 
-export default IconedInput;
+export default SearchWithDropdown;

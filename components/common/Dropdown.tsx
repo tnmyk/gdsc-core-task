@@ -1,8 +1,4 @@
-interface IDropdownProps {
-  dropdownOpen: boolean;
-  dropdownItems: string[];
-  onSelect?: (item: string) => void;
-}
+import { IDropdownProps } from "../../types/common";
 
 const DropdownLiEle = ({
   item,

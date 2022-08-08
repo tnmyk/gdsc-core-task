@@ -1,10 +1,5 @@
-import { ReactNode } from "react";
+import { IPaginationButton } from "../../types/home";
 
-interface IPaginationButton {
-  children: ReactNode;
-  onClick?: () => void;
-  disabled?: boolean;
-}
 const PaginationButton = ({
   children,
   onClick,

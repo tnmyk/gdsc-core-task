@@ -57,7 +57,13 @@ const Gallery = ({ filter }: { filter: string }) => {
           </h2>
         )}
       </div>
-      <button className="mt-8 p-3 px-7 bg-white rounded-lg shadow-md flex gap-x-4 justify-center items-center font-medium">
+      <button
+        className="mt-8 p-3 px-7 bg-white rounded-lg shadow-md flex gap-x-4 justify-center items-center font-medium"
+        onClick={() => {
+          if (currentPage >= totalPages) return;
+          setCurrentPage(currentPage + 1);
+        }}
+      >
         Next Page <BsArrowRight />
       </button>
       <div className="w-9/12 mt-6 md:mt-0 flex flex-col-reverse sm:flex-row gap-y-6 justify-between items-center">

@@ -1,14 +1,9 @@
 import Link from "next/link";
 import { HiOutlineDownload } from "react-icons/hi";
 import { TbLockOff, TbLockOpenOff } from "react-icons/tb";
+import { IGalleryCard } from "../../types/home";
 
-interface Props {
-  title: string;
-  isPremium: boolean;
-  imageURL: string;
-}
-
-const Card = ({ title, isPremium, imageURL }: Props) => {
+const GalleryCard = ({ title, isPremium, imageURL }: IGalleryCard) => {
   return (
     <div className="w-[32%] min-w-[240px]  bg-white rounded-2xl p-3 pb-6 flex flex-col items-center shadow-lg">
       <div className="relative w-full h-[12rem] rounded bg-gray-100 flex items-center justify-center ">
@@ -38,4 +33,4 @@ const Card = ({ title, isPremium, imageURL }: Props) => {
   );
 };
 
-export default Card;
+export default GalleryCard;

@@ -16,7 +16,6 @@ const Home: NextPage = () => {
       </h2>
       <SearchWithDropdown
         dropdownItems={searchDropdownItems}
-        value={filter}
         setValue={setFilter}
         className="my-8 sm:w-[80%] md:w-[30rem]"
       />

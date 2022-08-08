@@ -185,6 +185,11 @@ const Gallery = ({ filter }: { filter: string }) => {
               imageURL={card.imageURL}
             />
           ))}
+        {currentGalleryData.length === 0 && (
+          <h2 className="py-36 font-medium text-gray-500">
+            Sorry, No Illustrations Found!
+          </h2>
+        )}
       </div>
       <button className="mt-8 p-3 px-7 bg-white rounded-lg shadow-md flex gap-x-4 justify-center items-center font-medium">
         Next Page <BsArrowRight />
@@ -221,9 +226,9 @@ const Gallery = ({ filter }: { filter: string }) => {
             </PaginationButton>
             <PaginationButton>{currentPage}</PaginationButton>
             <PaginationButton
-              disabled={currentPage === totalPages}
+              disabled={currentPage >= totalPages}
               onClick={() => {
-                if (currentPage == totalPages) return;
+                if (currentPage >= totalPages) return;
                 setCurrentPage(currentPage + 1);
               }}
             >

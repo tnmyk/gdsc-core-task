@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiBookmarks } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
 import { CgOptions } from "react-icons/cg";
@@ -26,6 +26,114 @@ const galleryData = [
     imageURL:
       "https://www.freeiconspng.com/uploads/vaccine-medical-icon-symbol-png-15.png",
   },
+  {
+    title: "Dog illustration",
+    isPremium: false,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/vaccine-medical-icon-symbol-png-15.png",
+  },
+  {
+    title: "Pen illustration",
+    isPremium: true,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/abstract-circle-wave-logo-png-image-11.png",
+  },
+  {
+    title: "Cat illustration",
+    isPremium: true,
+    imageURL:
+      "https://w7.pngwing.com/pngs/509/584/png-transparent-batman-logo-sticker-batman-logo-comics-emblem-superhero.png",
+  },
+  {
+    title: "Pet illustration",
+    isPremium: true,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/abstract-circle-wave-logo-png-image-11.png",
+  },
+  {
+    title: "Developer illustration",
+    isPremium: true,
+    imageURL:
+      "https://w7.pngwing.com/pngs/509/584/png-transparent-batman-logo-sticker-batman-logo-comics-emblem-superhero.png",
+  },
+  {
+    title: "Doctor illustration",
+    isPremium: false,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/vaccine-medical-icon-symbol-png-15.png",
+  },
+  {
+    title: "Parent illustration",
+    isPremium: true,
+    imageURL:
+      "https://w7.pngwing.com/pngs/509/584/png-transparent-batman-logo-sticker-batman-logo-comics-emblem-superhero.png",
+  },
+  {
+    title: "Child illustration",
+    isPremium: true,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/abstract-circle-wave-logo-png-image-11.png",
+  },
+  {
+    title: "Food illustration",
+    isPremium: false,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/vaccine-medical-icon-symbol-png-15.png",
+  },
+  {
+    title: "Drink illustration",
+    isPremium: true,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/abstract-circle-wave-logo-png-image-11.png",
+  },
+  {
+    title: "Wave illustration",
+    isPremium: true,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/abstract-circle-wave-logo-png-image-11.png",
+  },
+  {
+    title: "Batman illustration",
+    isPremium: true,
+    imageURL:
+      "https://w7.pngwing.com/pngs/509/584/png-transparent-batman-logo-sticker-batman-logo-comics-emblem-superhero.png",
+  },
+  {
+    title: "Med illustration",
+    isPremium: false,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/vaccine-medical-icon-symbol-png-15.png",
+  },
+  {
+    title: "Games illustration",
+    isPremium: true,
+    imageURL:
+      "https://w7.pngwing.com/pngs/509/584/png-transparent-batman-logo-sticker-batman-logo-comics-emblem-superhero.png",
+  },
+  {
+    title: "Clothing illustration",
+    isPremium: true,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/abstract-circle-wave-logo-png-image-11.png",
+  },
+  {
+    title: "Tshirt illustration",
+    isPremium: false,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/vaccine-medical-icon-symbol-png-15.png",
+  },
+  {
+    title: "Med illustration",
+    isPremium: false,
+    imageURL:
+      "https://www.freeiconspng.com/uploads/vaccine-medical-icon-symbol-png-15.png",
+  },
+  {
+    title: "Pic illustration",
+    isPremium: true,
+    imageURL:
+      "https://w7.pngwing.com/pngs/509/584/png-transparent-batman-logo-sticker-batman-logo-comics-emblem-superhero.png",
+  },
 ];
 
 const collectionsImagesData = [
@@ -42,8 +150,15 @@ const CollectionsImage = ({ imageURL }: { imageURL: string }) => {
   );
 };
 
-const Gallery = () => {
+const Gallery = ({ filter }: { filter: string }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const currentGalleryData = galleryData.filter((galleryEle) =>
+    galleryEle.title.toLowerCase().includes(filter.toLowerCase())
+  );
+  const totalPages = Math.ceil(currentGalleryData.length / 3);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filter]);
   return (
     <>
       <div className="w-9/12 flex flex-col sm:flex-row items-center sm:justify-between gap-y-3">
@@ -60,14 +175,16 @@ const Gallery = () => {
         </div>
       </div>
       <div className="mt-6 flex flex-wrap flex-row w-9/12 gap-x-4 gap-y-5 justify-center">
-        {galleryData.map((card, index) => (
-          <GalleryCard
-            key={`card-${index}`}
-            title={card.title}
-            isPremium={card.isPremium}
-            imageURL={card.imageURL}
-          />
-        ))}
+        {currentGalleryData
+          .slice((currentPage - 1) * 3, (currentPage - 1) * 3 + 3)
+          .map((card, index) => (
+            <GalleryCard
+              key={`card-${index}`}
+              title={card.title}
+              isPremium={card.isPremium}
+              imageURL={card.imageURL}
+            />
+          ))}
       </div>
       <button className="mt-8 p-3 px-7 bg-white rounded-lg shadow-md flex gap-x-4 justify-center items-center font-medium">
         Next Page <BsArrowRight />
@@ -104,16 +221,16 @@ const Gallery = () => {
             </PaginationButton>
             <PaginationButton>{currentPage}</PaginationButton>
             <PaginationButton
-              disabled={currentPage === 10}
+              disabled={currentPage === totalPages}
               onClick={() => {
-                if (currentPage == 10) return;
+                if (currentPage == totalPages) return;
                 setCurrentPage(currentPage + 1);
               }}
             >
               <IoIosArrowForward />
             </PaginationButton>
           </div>
-          of 10
+          of {totalPages || 1}
         </div>
       </div>
     </>

@@ -5,13 +5,16 @@ import Dropdown from "./Dropdown";
 const IconedInput = ({
   dropdownItems,
   className,
+  value,
+  setValue,
 }: {
   dropdownItems: string[];
   className?: string;
+  value: string;
+  setValue: (value: string) => void;
 }) => {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [currentFilter, setCurrentFilter] = useState<string>(dropdownItems[0]);
-
   const handleDropDown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -47,6 +50,7 @@ const IconedInput = ({
           type="search"
           className="block p-2.5 px-4 pr-8 w-full z-20 text-sm text-gray-900 outline-none"
           placeholder={`Search ${currentFilter}...`}
+          onChange={(e) => setValue(e.target.value)}
         />
         <div className="absolute inline-flex items-center top-0 bottom-0 right-0 p-2.5 text-lg">
           <FiSearch />

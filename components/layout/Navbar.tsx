@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { useState } from "react";
+import { memo, useState } from "react";
 import Dropdown from "../common/Dropdown";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { GrFormClose } from "react-icons/gr";
 
-const SocialIcon = ({ icon }: { icon: string }) => {
+const SocialIcon = memo(({ icon }: { icon: string }) => {
   return (
     <Link href="/">
       <a
@@ -16,7 +16,7 @@ const SocialIcon = ({ icon }: { icon: string }) => {
       </a>
     </Link>
   );
-};
+});
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
